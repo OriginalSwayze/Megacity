@@ -1,0 +1,16 @@
+/* Megacity — desktop notifications. */
+@import url("./core/alias.css");
+@import url("./core/tokens.css");
+@import url("./core/base.css");
+html:has(> body.DesktopToastContainer),
+html body.DesktopToastContainer { background: transparent !important; }
+html .DesktopToastContainer .DesktopToastBackground,
+html .DesktopToastContainer .DesktopToastTemplate { background: transparent !important; }
+/* MEGACITY notifications: an incoming transmission */
+html .DesktopToastContainer .DesktopToastPopup { position: relative; border-radius: 2px !important; border: none !important;
+    background: var(--mg-ticks), linear-gradient(90deg, var(--mg-c20), transparent 40%), rgba(var(--mg-smoke), .97) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; animation: mg-toast 420ms ease backwards; }
+@keyframes mg-toast { 0% { opacity: 0; transform: translateX(20px); } 30% { opacity: .4; } 40% { opacity: .9; } 50% { opacity: .5; } 100% { opacity: 1; transform: none; } }
+html .DesktopToastContainer .DesktopToastTemplate :is(.Header .Title,.GroupMessageUserName,.IngameTitle) { font-family: var(--mg-wide) !important; font-weight: 400 !important; letter-spacing: .14em !important; text-transform: uppercase; color: #fff !important; }
+html .DesktopToastContainer .DesktopToastTemplate :is(.StandardNotificationDescription,.GroupMessageBody,.StandardNotificationSubText) { color: var(--t-fg-2) !important; }
+html .DesktopToastContainer .DesktopToastTemplate :is(.AppLogo,.StandardLogoDimensions), html .DesktopToastContainer .DesktopToastTemplate .AppLogo :is(.Container,img) { border-radius: 1px !important; box-shadow: 0 0 0 1px var(--mg-c40) !important; }
+html .DesktopToastContainer .DesktopToastTemplate .FriendInGameAppColor { color: var(--mg-cyan) !important; }

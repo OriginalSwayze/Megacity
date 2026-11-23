@@ -1,0 +1,54 @@
+/* MEGACITY — tokens.
+   Night: blue-black haze, cyan and magenta neon, amber for analysis readouts, fire orange from the stacks. */
+:root {
+    --mg-void: var(--mg-p-void, #04060A);
+    --mg-haze: var(--mg-p-haze, #0C1A22);
+    --mg-smoke: var(--mg-p-smoke, 7, 11, 16);
+    --mg-cyan: var(--mg-p-cyan, #3FE6F2);
+    --mg-pink: var(--mg-p-pink, #FF3D8B);
+    --mg-amber: var(--mg-p-amber, #FFB454);
+    --mg-fire: var(--mg-p-fire, #FF7424);
+    --mg-ink: #E9F1F4;
+    --mg-dim: #8C9BA4;
+    --mg-c20: color-mix(in srgb, var(--mg-cyan) 20%, transparent);
+    --mg-c40: color-mix(in srgb, var(--mg-cyan) 40%, transparent);
+    --mg-c70: color-mix(in srgb, var(--mg-cyan) 70%, transparent);
+    --mg-a14: color-mix(in srgb, var(--mg-amber) 14%, transparent);
+    --mg-a30: color-mix(in srgb, var(--mg-amber) 30%, transparent);
+    --mg-p30: color-mix(in srgb, var(--mg-pink) 30%, transparent);
+    --mg-wide: "Bahnschrift", "Segoe UI", sans-serif;
+    --mg-data: "Cascadia Mono", Consolas, monospace;
+    --mg-text: "Segoe UI Variable Text", "Segoe UI", sans-serif;
+    --mg-panel: rgba(var(--mg-smoke), var(--mr-setting-tint, 56%));
+    --mg-ticks: linear-gradient(var(--mg-a30),var(--mg-a30)) 0 0 / 12px 1px no-repeat, linear-gradient(var(--mg-a30),var(--mg-a30)) 0 0 / 1px 12px no-repeat, linear-gradient(var(--mg-a30),var(--mg-a30)) 100% 0 / 12px 1px no-repeat, linear-gradient(var(--mg-a30),var(--mg-a30)) 100% 0 / 1px 12px no-repeat, linear-gradient(var(--mg-a30),var(--mg-a30)) 0 100% / 12px 1px no-repeat, linear-gradient(var(--mg-a30),var(--mg-a30)) 0 100% / 1px 12px no-repeat, linear-gradient(var(--mg-a30),var(--mg-a30)) 100% 100% / 12px 1px no-repeat, linear-gradient(var(--mg-a30),var(--mg-a30)) 100% 100% / 1px 12px no-repeat;
+    --mg-glow-c: 0 0 6px var(--mg-c70), 0 0 18px var(--mg-c40);
+    --mg-glow-p: 0 0 6px color-mix(in srgb, var(--mg-pink) 70%, transparent), 0 0 18px var(--mg-p30);
+
+    --t-accent: var(--mg-cyan);
+    --t-accent-2: var(--mg-amber);
+    --t-alert: var(--mg-pink);
+    --t-bg: var(--mg-void);
+    --t-panel: rgb(var(--mg-smoke));
+    --t-ink: #021316;
+    --t-fg: var(--mg-ink);
+    --t-fg-2: #B5C3CA;
+    --t-fg-3: #6F808A;
+    --t-fg-4: #43515A;
+    --t-line: rgba(160, 210, 225, 0.10);
+
+    --mr-r: 2px; --mr-r-lg: 2px; --mr-r-md: 2px; --mr-r-sm: 1px; --mr-r-pill: 2px;
+    --mr-glass: var(--mg-panel);
+    --mr-glass-strong: rgba(var(--mg-smoke), .9);
+    --mr-glass-solid: rgb(var(--mg-smoke));
+    --mr-blur: var(--mr-setting-blur, 7px);
+    --mr-glass-filter: blur(var(--mr-blur)) saturate(120%);
+    --mr-glass-edge: inset 0 0 0 1px var(--t-line);
+    --mr-font: var(--mg-text);
+    --mr-font-display: var(--mg-wide);
+    --mr-font-mono: var(--mg-data);
+    --mr-grad: linear-gradient(90deg, var(--mg-cyan), color-mix(in srgb, var(--mg-cyan) 70%, white));
+    --mr-grad-soft: linear-gradient(90deg, var(--mg-c20), transparent 85%);
+    --mr-on-accent: #021316;
+    --mr-spot: radial-gradient(260px circle at var(--mr-mx, -999px) var(--mr-my, -999px), color-mix(in srgb, var(--mg-amber) 6%, transparent), transparent 70%);
+    --mr-ease: cubic-bezier(.2, .9, .2, 1);
+}

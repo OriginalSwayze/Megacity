@@ -1,0 +1,17 @@
+/* Megacity — the "Sign in to Steam" window. */
+@import url("./core/alias.css");
+@import url("./core/tokens.css");
+@import url("./core/base.css");
+@import url("./core/backdrop.css");
+html .Login, html .Login.AnimatedBackground, html .LoginAnimatedBackground,
+html .Login .LoginStatusContainer, html .Login .SpinnerLoaderContainer { background: transparent !important; }
+html .Login.AnimatedBackground::before, html .LoginAnimatedBackground::after, html .Login video { display: none !important; }
+html .Login .SpinnerLoaderContainer { position: relative; }
+html .Login .SpinnerLoaderContainer > img { opacity: 0 !important; }
+/* MEGACITY sign-in: identity check */
+html .Login .SpinnerLoaderContainer::before { content: ""; position: absolute; left: 50%; top: 50%; width: 120px; height: 60px; margin: -30px 0 0 -60px; border-radius: 50%;
+    background: radial-gradient(circle, #000 0 9px, transparent 10px), repeating-conic-gradient(#4C8E93 0 2deg, #1E4146 2deg 4deg, #A6773C 4deg 5deg); -webkit-mask: radial-gradient(circle, #000 0 28px, transparent 29px); mask: radial-gradient(circle, #000 0 28px, transparent 29px); }
+html .Login .SpinnerLoaderContainer::after { content: "VERIFYING IDENTITY"; position: absolute; left: 50%; top: calc(50% + 46px); transform: translateX(-50%); white-space: nowrap; font: 10px var(--mg-data); letter-spacing: .3em; color: var(--mg-amber); animation: mg-blink 1.2s steps(1) infinite; }
+html .Login .LoadingStatus, html .Login .LoadingStatus > .LoginStatus { font-family: var(--mg-data) !important; font-size: 11px !important; letter-spacing: .2em; text-transform: uppercase; color: var(--mg-cyan) !important; }
+html .Login .ProgressBar { background: var(--mg-cyan) !important; border-radius: 0 !important; box-shadow: var(--mg-glow-c); }
+html .Login .Avatar img { border-radius: 1px !important; box-shadow: 0 0 0 1px var(--mg-cyan), var(--mg-glow-c) !important; filter: grayscale(.3); }

@@ -1,0 +1,378 @@
+{
+    "name": "Megacity",
+    "author": "OriginalSwayze",
+    "description": "Future noir. A live megacity at night behind smoked glass: flare stacks bursting into the haze, an ad blimp sweeping searchlights through the rain, flying cars and flickering windows, beams of light sliding through the blinds across the desk, thin neon tube lettering, amber analysis readouts, and game artwork you can examine with a tracking crosshair.",
+    "version": "1.0.0",
+    "tags": [
+        "Cyberpunk",
+        "Noir",
+        "Neon",
+        "Rain",
+        "Animated",
+        "Atmospheric"
+    ],
+    "header_image": "https://raw.githubusercontent.com/OriginalSwayze/Megacity/main/media/library.gif",
+    "splash_image": "https://raw.githubusercontent.com/OriginalSwayze/Megacity/main/media/gamepage.png",
+    "github": {
+        "owner": "OriginalSwayze",
+        "repo_name": "Megacity"
+    },
+    "Steam-WebKit": "webkit.css",
+    "Conditions": {
+        "Mood": {
+            "description": "Night (cyan, magenta and amber), Dust (orange haze) or Ice (cold white).",
+            "tab": "Appearance",
+            "default": "Night",
+            "values": {
+                "Night": {},
+                "Dust": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/presets/mood-dust.css"
+                    }
+                },
+                "Ice": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/presets/mood-ice.css"
+                    }
+                }
+            }
+        },
+        "Weather": {
+            "description": "Rain, a downpour, snow, or dry.",
+            "tab": "Appearance",
+            "default": "Rain",
+            "values": {
+                "Rain": {},
+                "Downpour": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/weather-heavy.css"
+                    }
+                },
+                "Snow": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/weather-snow.css"
+                    }
+                },
+                "Dry": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/weather-dry.css"
+                    }
+                }
+            }
+        },
+        "City": {
+            "description": "The living city behind the glass: animated, drawn once and still, or off.",
+            "tab": "Appearance",
+            "default": "Live",
+            "values": {
+                "Live": {},
+                "Still": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/city-still.css"
+                    }
+                },
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/city-off.css"
+                    }
+                }
+            }
+        },
+        "Light through blinds": {
+            "description": "Slatted beams of light that sweep across the desk now and then.",
+            "tab": "Appearance",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/blinds-off.css"
+                    }
+                }
+            }
+        },
+        "Analysis overlay": {
+            "description": "The grid, corner marks and tracking crosshair on game artwork.",
+            "tab": "Appearance",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/esp-off.css"
+                    }
+                }
+            }
+        },
+        "Covers": {
+            "description": "Washed-out stills that regain colour under the cursor, or full colour always.",
+            "tab": "Appearance",
+            "default": "Graded",
+            "values": {
+                "Graded": {},
+                "Full colour": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/covers-colour.css"
+                    }
+                }
+            }
+        },
+        "Film grain": {
+            "description": "Grain and a vignette over everything.",
+            "tab": "Appearance",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/grain-off.css"
+                    }
+                }
+            }
+        },
+        "Panel transparency": {
+            "description": "How much of the city shows through the smoked glass.",
+            "tab": "Appearance",
+            "default": 56,
+            "slider": {
+                "cssVariable": "--mr-setting-tint",
+                "min": 40,
+                "max": 100,
+                "step": 2,
+                "unit": "%"
+            }
+        },
+        "Game list density": {
+            "description": "Row size in the game list.",
+            "tab": "Layout",
+            "default": "Comfortable",
+            "values": {
+                "Comfortable": {},
+                "Compact": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/list-compact.css"
+                    }
+                }
+            }
+        },
+        "What's New shelf": {
+            "description": "The What's New carousel on the library home.",
+            "tab": "Layout",
+            "default": "Show",
+            "values": {
+                "Show": {},
+                "Hide": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/hide-whats-new.css"
+                    }
+                }
+            }
+        },
+        "Readout": {
+            "description": "The city readout in the console strip: sector, time, rainfall, visibility, humidity and transfers.",
+            "tab": "Layout",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/hud-off.css"
+                    }
+                }
+            }
+        },
+        "Startup screen": {
+            "description": "An eye under examination when Steam opens.",
+            "tab": "Motion",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/boot-off.css"
+                    }
+                }
+            }
+        },
+        "Motion": {
+            "description": "Full: everything. Calm: hovers only, the backdrop stands still. Still: no theme motion.",
+            "tab": "Motion",
+            "default": "Full",
+            "values": {
+                "Full": {},
+                "Calm": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/motion-calm.css"
+                    }
+                },
+                "Still": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/motion-still.css"
+                    }
+                }
+            }
+        },
+        "Cursor light": {
+            "description": "A soft light that follows the cursor across panels.",
+            "tab": "Motion",
+            "default": "On",
+            "values": {
+                "On": {},
+                "Off": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/cursor-light-off.css"
+                    }
+                }
+            }
+        },
+        "Privacy": {
+            "description": "Blur your account name and wallet until hovered.",
+            "tab": "Extras",
+            "default": "Off",
+            "values": {
+                "Off": {},
+                "Blur": {
+                    "TargetCss": {
+                        "affects": [
+                            "^Steam$"
+                        ],
+                        "src": "options/privacy.css"
+                    }
+                }
+            }
+        },
+        "Contrast": {
+            "description": "High: solid panels and brighter secondary text.",
+            "tab": "Accessibility",
+            "default": "Normal",
+            "values": {
+                "Normal": {},
+                "High": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/contrast-high.css"
+                    }
+                }
+            }
+        },
+        "Focus rings": {
+            "description": "Strong: a thick, high-visibility outline on whatever has keyboard or controller focus.",
+            "tab": "Accessibility",
+            "default": "Standard",
+            "values": {
+                "Standard": {},
+                "Strong": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/focus-strong.css"
+                    }
+                }
+            }
+        },
+        "Text size": {
+            "description": "Large: bigger game list and body text.",
+            "tab": "Accessibility",
+            "default": "Normal",
+            "values": {
+                "Normal": {},
+                "Large": {
+                    "TargetCss": {
+                        "affects": [
+                            ".*"
+                        ],
+                        "src": "options/text-large.css"
+                    }
+                }
+            }
+        }
+    },
+    "Patches": [
+        {
+            "MatchRegexString": "^Steam$",
+            "TargetCss": "main.css",
+            "TargetJs": "js/main.js"
+        },
+        {
+            "MatchRegexString": ".ModalDialogPopup",
+            "TargetCss": "main.css"
+        },
+        {
+            "MatchRegexString": ".FullModalOverlay",
+            "TargetCss": "main.css"
+        },
+        {
+            "MatchRegexString": ".friendsui-container",
+            "TargetCss": "friends.css"
+        },
+        {
+            "MatchRegexString": ".ContextMenuPopup",
+            "TargetCss": "popup.css"
+        },
+        {
+            "MatchRegexString": ".DesktopToastContainer",
+            "TargetCss": "toast.css"
+        },
+        {
+            "MatchRegexString": "^Sign in to Steam$",
+            "TargetCss": "login.css"
+        }
+    ]
+}

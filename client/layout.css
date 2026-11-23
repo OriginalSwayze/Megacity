@@ -1,0 +1,68 @@
+/* ==========================================================================
+   MEGACITY — layout: the analyst's desk at night.
+     · Top: the wordmark and menus on the left, Store · Library · Community ·
+       You as neon tube lettering in the centre, the account on the right
+     · Two smoked-glass panels: CASE FILES (the game list) and the page; on a
+       game page the artwork becomes a photo-analysis screen
+     · Bottom: a console strip across the window — transmit / transfers /
+       comms on the left, a live city readout (sector, time, rain, haze,
+       transfers) in the middle
+     · Behind everything, the city lives; now and then searchlight beams
+       sweep through the blinds across the whole desk
+   ========================================================================== */
+html .OuterFrame > .TopBar { height: 56px !important; min-height: 56px !important; }
+html .Library > .Container { padding: 2px 14px 44px !important; gap: 12px !important; }
+html .Library > .Container > .LibraryWindowDivider { opacity: 0; }
+html .OuterFrame > .ContentFrame:not(:has(.Library)) { padding: 2px 14px 44px !important; box-sizing: border-box !important; }
+/* the game list's file label */
+html .Library > .Container > div:not(.MainPanel):first-child { padding-top: 38px !important; }
+html .Library > .Container > div:not(.MainPanel):first-child::before { content: "CASE FILES  //  INDEX"; position: absolute; left: 14px; top: 22px; z-index: 2; pointer-events: none;
+    font: 9.5px var(--mg-data); letter-spacing: .26em; color: var(--mg-amber); opacity: .75; }
+
+/* ---- Neon lettering navigation ------------------------------------------ */
+html .TopBar > .SuperNavBar { height: 56px !important; }
+html .SuperNavBar .SuperNav { height: 40px !important; margin-top: 8px !important; padding: 0 6px !important; gap: 6px !important; background: transparent !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+html .SuperNav > svg.Arrow { color: var(--t-fg-3); }
+html .SuperNav .SuperNavMenu > .MenuButton {
+    height: 40px !important; padding: 0 18px !important; border-radius: 0 !important; background: transparent !important;
+    font-family: var(--mg-wide) !important; font-size: 12.5px !important; font-weight: 300 !important; letter-spacing: .42em !important; text-transform: uppercase !important; color: #5F717B !important;
+    transition: color .3s, text-shadow .3s !important;
+}
+html .SuperNav .SuperNavMenu:nth-last-child(1) > .MenuButton { font-size: 0 !important; letter-spacing: 0 !important; }
+html .SuperNav .SuperNavMenu:nth-last-child(1) > .MenuButton::after { content: "You" !important; display: block !important; position: static !important; font-size: 12.5px; letter-spacing: .42em; opacity: 1 !important; transform: none !important; background: none !important; width: auto !important; height: auto !important; }
+html .SuperNav .SuperNavMenu:hover > .MenuButton { color: #C6D4DA !important; background: transparent !important; }
+html .SuperNav .SuperNavMenu.Selected > .MenuButton, html.mr-js .SuperNav .SuperNavMenu.Selected > .MenuButton {
+    color: #DFFBFF !important; background: transparent !important; box-shadow: none !important; text-shadow: 0 0 4px var(--mg-cyan), 0 0 14px var(--mg-c70), 0 0 30px var(--mg-c40);
+    animation: mg-tube-on 900ms linear backwards, mg-buzz 11s linear 1s infinite; animation-play-state: running, var(--mr-ambient);
+}
+html .SuperNav .mr-nav-indicator { top: auto !important; bottom: 2px !important; height: 2px !important; border-radius: 2px !important; animation: none !important;
+    background: var(--mg-cyan) !important; box-shadow: 0 0 6px var(--mg-cyan), 0 0 16px var(--mg-c70), 0 6px 20px var(--mg-c40) !important;
+    transition: transform 520ms cubic-bezier(.2,.9,.2,1), width 420ms ease !important; }
+
+/* ---- Console strip ---------------------------------------------------------- */
+html .OuterFrame::after { content: ""; position: fixed; left: 0; right: 0; bottom: 0; height: 32px; z-index: 29; pointer-events: none;
+    background: linear-gradient(180deg, rgba(var(--mg-smoke), .9), rgba(2,3,5,.96)); box-shadow: inset 0 1px 0 var(--mg-a14), 0 -12px 30px -12px #000; }
+html .BottomBar { left: 0 !important; right: auto !important; bottom: 0 !important; margin: 0 !important; width: auto !important; height: 32px !important; padding: 0 0 0 12px !important; gap: 2px !important; z-index: 31; animation: none !important; }
+html .BottomBar::before { display: none !important; }
+html .BottomBar .DownloadStatus::before, html .BottomBar .DownloadStatus::after { display: none !important; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton) {
+    position: relative !important; order: 0 !important; height: 32px !important; width: auto !important; min-width: 0 !important; padding: 0 12px !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important;
+    color: var(--t-fg-3) !important; transition: color .2s, text-shadow .2s !important;
+}
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton) > * { display: none !important; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton)::after { content: var(--mg-key) !important; display: block !important; position: static !important; width: auto !important; height: auto !important; opacity: 1 !important; transform: none !important; background: none !important;
+    font: 10px/32px var(--mg-data); letter-spacing: .22em; white-space: nowrap; }
+html .BottomBar .AddGameButton { --mg-key: "[+] TRANSMIT"; }
+html .BottomBar .DownloadStatus { --mg-key: "[↓] TRANSFERS"; }
+html .BottomBar .FriendsButton { --mg-key: "[◎] COMMS"; }
+html .BottomBar :is(.AddGameButton, .DownloadStatus, .FriendsButton):hover { color: var(--mg-cyan) !important; text-shadow: var(--mg-glow-c); background: transparent !important; }
+html .BottomBar .DownloadStatus:has(.DetailedDownloadProgress) { color: var(--mg-amber) !important; }
+
+/* The city readout lives in the console strip */
+html .od-hud { position: fixed !important; left: 50% !important; bottom: 0 !important; top: auto !important; transform: translateX(-50%); height: 32px; margin: 0 !important; z-index: 32; pointer-events: none !important;
+    display: flex; align-items: center; gap: 18px; white-space: nowrap; font: 10px var(--mg-data); letter-spacing: .2em; color: var(--t-fg-3); }
+html .od-hud b { font-weight: 400; color: var(--mg-amber); }
+html .od-hud .live { color: var(--mg-pink); text-shadow: var(--mg-glow-p); }
+html .od-hud .live::before { content: "● "; animation: mg-blink 1.4s steps(1) infinite; }
+html .od-hud .tx { color: var(--mg-cyan); text-shadow: var(--mg-glow-c); }
+@media (max-width: 1150px) { html .od-hud .opt { display: none; } }

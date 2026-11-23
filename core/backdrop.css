@@ -1,0 +1,18 @@
+/* MEGACITY — behind everything: the haze, the live city (canvas, theme.js), light through blinds,
+   grain and a vignette. */
+html { background: var(--mg-void) !important; }
+body { background: transparent !important; }
+html::before { content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background: radial-gradient(70% 45% at 50% 100%, color-mix(in srgb, var(--mg-fire) 18%, transparent), transparent 70%),
+                linear-gradient(180deg, var(--mg-void), var(--mg-haze) 70%, color-mix(in srgb, var(--mg-haze) 70%, var(--mg-fire) 12%)); }
+.Wrapper.ForceOpaqueBackground, .FocusNavigationRoot, .Root, .OuterFrame, .ContentFrame { background: transparent !important; }
+html #mg-city { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+/* Light through blinds: slatted beams sweep across the room now and then */
+html .mg-blinds { position: fixed; inset: -10% -20%; z-index: 9000; pointer-events: none; transform: rotate(-9deg);
+    background: repeating-linear-gradient(180deg, rgba(255, 214, 160, var(--mg-blind-a, .07)) 0 16px, transparent 16px 40px);
+    -webkit-mask: linear-gradient(100deg, transparent 35%, #000 47% 53%, transparent 65%) 130% 0 / 300% 100% no-repeat;
+    mask: linear-gradient(100deg, transparent 35%, #000 47% 53%, transparent 65%) 130% 0 / 300% 100% no-repeat;
+    mix-blend-mode: screen; animation: mg-sweep 26s cubic-bezier(.45, 0, .55, 1) 4s infinite; animation-play-state: var(--mr-ambient); opacity: 0; }
+html .mg-grain { position: fixed; inset: 0; z-index: 9001; pointer-events: none; opacity: var(--mg-grain, .05);
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+                radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(0,0,0,.55)); }

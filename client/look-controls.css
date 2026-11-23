@@ -1,0 +1,14 @@
+/* MEGACITY — controls */
+html .DialogButton { border-radius: 2px !important; background: rgba(0,0,0,.35) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; font-family: var(--mg-wide) !important; font-weight: 300 !important; letter-spacing: .16em !important; text-transform: uppercase !important; }
+html .DialogButton:not(.Disabled):not(:disabled):hover { box-shadow: inset 0 0 0 1px var(--mg-c70), var(--mg-glow-c) !important; color: var(--mg-cyan) !important; transform: none !important; }
+html .DialogButton.Primary, html button.DialogButton.Primary { background: var(--mg-cyan) !important; color: #021316 !important; box-shadow: var(--mg-glow-c) !important; font-weight: 400 !important; }
+html :is(.DialogInput, .DialogTextInputBase), html .DialogDropDown { border-radius: 2px !important; background-color: rgba(0,0,0,.45) !important; border: none !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; }
+html :is(.DialogInput, .DialogTextInputBase):focus { box-shadow: inset 0 0 0 1px var(--mg-cyan), var(--mg-glow-c) !important; }
+html .Toggle.On .ToggleRail, html .Toggle[class*="On"] .ToggleRail { background: var(--mg-cyan) !important; box-shadow: var(--mg-glow-c); }
+html .GenericConfirmDialog, html .ModalPosition_Content > .DialogContent { border-radius: 2px !important; background: var(--mg-ticks), rgb(var(--mg-smoke)) !important; box-shadow: inset 0 0 0 1px var(--t-line), 0 30px 80px -20px #000 !important; }
+html .PagedSettingsDialog_PageListColumn .PagedSettingsDialog_Title { background: none !important; -webkit-text-fill-color: var(--mg-ink); color: var(--mg-ink) !important; font-family: var(--mg-wide) !important; font-weight: 300 !important; letter-spacing: .4em !important; text-transform: uppercase !important; font-size: 17px !important; }
+html .PagedSettingsDialog .PagedSettingsDialog_PageListColumn { background: rgba(0,0,0,.4) !important; }
+html .PagedSettingsDialog_PageList .PagedSettingsDialog_PageListItem { border-radius: 1px !important; }
+html .PagedSettingsDialog_PageList .PagedSettingsDialog_PageListItem.Active { background: var(--mr-grad-soft) !important; box-shadow: inset 2px 0 0 var(--mg-cyan) !important; }
+html .PagedSettingsDialog_PageList .PagedSettingsDialog_PageListItem.Active::before { display: none !important; }
+html .PagedSettingsDialog .SettingsDialogSubHeader { font-family: var(--mg-data) !important; letter-spacing: .18em !important; color: var(--mg-amber) !important; text-transform: uppercase !important; }

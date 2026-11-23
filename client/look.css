@@ -1,0 +1,143 @@
+/* ==========================================================================
+   MEGACITY — the look: smoked glass with amber corner ticks; thin, wide,
+   tracked capitals; neon used like real tubes (cyan for where you are and
+   what you can do, magenta for alerts); amber monospace for every readout.
+   ========================================================================== */
+
+/* ---- Type ------------------------------------------------------------- */
+html :is(.UpdatesContainer .Name, .ShowcaseHeader .Focusable, .ShowcaseHeader .DialogDropDown_CurrentDisplay) {
+    font-family: var(--mg-wide) !important; font-size: 15px !important; font-weight: 300 !important; letter-spacing: .28em !important; text-transform: uppercase !important; color: var(--mg-ink) !important;
+}
+html :is(.AppDetailsSection .SectionHeader, h2.SectionHeader) {
+    font-family: var(--mg-wide) !important; font-size: 12px !important; font-weight: 400 !important; letter-spacing: .32em !important; text-transform: uppercase !important; color: var(--mg-amber) !important;
+    background: linear-gradient(90deg, var(--mg-a30), transparent 70%) 0 100% / 100% 1px no-repeat !important;
+}
+html .AppDetailsSection .SectionHeader::before { display: none !important; }
+html .ShowcaseHeader :is(.DialogDropDown, .DialogDropDown *, .Focusable, .Focusable *) { font-family: var(--mg-wide) !important; font-weight: 300 !important; letter-spacing: .28em !important; text-transform: uppercase !important; }
+html :is(.PlayBar .PlayBarLabel, .UpdatesContainer .EventTime) { font-family: var(--mg-data) !important; font-size: 10px !important; letter-spacing: .14em !important; text-transform: uppercase !important; color: var(--mg-amber) !important; opacity: .75; }
+html .PlayBar :is(.LastPlayedInfo, .PlayBarDetailLabel) { font-family: var(--mg-data) !important; font-size: 13px !important; font-weight: 400 !important; color: var(--mg-ink) !important; }
+
+/* ---- Wordmark + menus -------------------------------------------------- */
+html .RootMenuBar .RootMenuButton .SteamButton::before { width: 9px; height: 9px; border-radius: 50%; animation: mg-blink 1.6s steps(1) infinite; animation-play-state: var(--mr-ambient);
+    background: var(--mg-pink); box-shadow: var(--mg-glow-p); }
+html .RootMenuBar .RootMenuButton .SteamButton::after { content: "MEGACITY"; font: 300 14px var(--mg-wide); letter-spacing: .5em; color: var(--mg-ink); text-shadow: 0 0 12px rgba(255,255,255,.25); }
+html .RootMenuBar .RootMenuButton { border-radius: 2px !important; font-family: var(--mg-wide) !important; font-size: 11px !important; font-weight: 300 !important; letter-spacing: .2em !important; text-transform: uppercase !important; color: var(--t-fg-3) !important; }
+html .RootMenuBar .RootMenuButton:hover, html .RootMenuBar .RootMenuButton.MenuOpen { color: var(--mg-ink) !important; background: rgba(255,255,255,.05) !important; }
+
+/* ---- Account ------------------------------------------------------------ */
+html .TitleBarControls .Button, html .TitleBarControls .AccountMenu { border-radius: 2px !important; background: rgba(var(--mg-smoke), .6) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; }
+html .TitleBarControls .Button:hover, html .TitleBarControls .AccountMenu:hover { box-shadow: inset 0 0 0 1px var(--mg-c70), var(--mg-glow-c) !important; transform: none !important; }
+html .TitleBarControls .AccountMenu .WalletBalance { background: transparent !important; color: var(--mg-amber) !important; font-family: var(--mg-data) !important; }
+html .TitleBarControls .AccountMenu .avatarHolder img { border-radius: 1px !important; filter: grayscale(.3) contrast(1.1); }
+
+/* ---- Panels: smoked glass, amber corner ticks ---------------------------- */
+html .Library > .Container > div:not(.MainPanel):first-child, html .MainPanel {
+    border-radius: 2px !important;
+    background: var(--mg-ticks), var(--mr-spot), var(--mg-panel) !important;
+    -webkit-backdrop-filter: var(--mr-glass-filter); backdrop-filter: var(--mr-glass-filter);
+    box-shadow: inset 0 0 0 1px var(--t-line), 0 30px 60px -30px #000 !important;
+}
+
+/* ---- Case files (game list) --------------------------------------------- */
+html .HomeBox .Bar { border-radius: 2px !important; }
+html .HomeBox .Bar .Label { font-family: var(--mg-wide) !important; font-weight: 300 !important; letter-spacing: .3em !important; text-transform: uppercase !important; }
+html .HomeBox .Bar.Selected { background: var(--mr-grad-soft) !important; box-shadow: inset 2px 0 0 var(--mg-cyan) !important; }
+html .GameListHomeAndSearch { box-shadow: none !important; }
+html .SearchInput input.DialogInput, html .SearchInput input.DialogTextInputBase {
+    height: 34px !important; border-radius: 2px !important; font-family: var(--mg-data) !important; font-size: 12px !important; letter-spacing: .06em;
+    background-color: rgba(0,0,0,.45) !important; border: none !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; color: var(--mg-amber) !important;
+}
+html .SearchInput input.DialogInput::placeholder { color: var(--t-fg-3) !important; font-style: normal !important; text-transform: uppercase; letter-spacing: .14em; }
+html .SearchInput input.DialogInput:focus { box-shadow: inset 0 0 0 1px var(--mg-cyan), var(--mg-glow-c) !important; }
+html .ReactVirtualized__List .SectionName { font-family: var(--mg-data) !important; font-size: 10.5px !important; letter-spacing: .2em !important; text-transform: uppercase !important; color: var(--mg-amber) !important; opacity: .8; }
+html .ReactVirtualized__List .SectionRule { height: 1px !important; background: linear-gradient(90deg, var(--mg-a30), transparent) !important; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer) { border-radius: 1px !important; }
+html .ReactVirtualized__List .Container:has(> .GameListEntryContainer):hover { background: rgba(160,210,225,.05) !important; }
+html body .ReactVirtualized__List .Container.Selected.Selected:has(> .GameListEntryContainer) { background: linear-gradient(90deg, var(--mg-c20), transparent 90%) !important; box-shadow: none !important; }
+html .ReactVirtualized__List .Container.Selected:has(> .GameListEntryContainer)::before { width: 2px !important; left: 0 !important; top: 2px !important; bottom: 2px !important; border-radius: 0 !important; background: var(--mg-cyan) !important; box-shadow: var(--mg-glow-c) !important; }
+html body .ReactVirtualized__List .Container.Selected:has(> .GameListEntryContainer) .GameListEntryContainer > span { color: #fff !important; text-shadow: 0 0 10px var(--mg-c40); }
+html .ReactVirtualized__List .GameListEntryContainer img { filter: grayscale(.35); border-radius: 1px; }
+html .ReactVirtualized__List .Container.Running:has(> .GameListEntryContainer) .GameListEntryContainer > span { color: var(--mg-cyan) !important; text-shadow: var(--mg-glow-c); }
+html .ReactVirtualized__List .Container:is(.Updating, .Synchronizing):has(> .GameListEntryContainer) .GameListEntryContainer > span { color: var(--mg-amber) !important; }
+
+/* ---- Covers: stills under rain light; colour returns under the cursor ---- */
+html .UpdatesContainer .HoversEnabled, html .LibraryItemBox, html .LibraryItemBox > * { border-radius: 1px !important; }
+html .LibraryItemBox { box-shadow: 0 0 0 1px var(--t-line), 0 18px 30px -18px #000 !important; filter: saturate(var(--mg-cover-sat, .55)) contrast(1.06) brightness(.9); transition: filter .5s ease, box-shadow .3s ease, transform .5s var(--mr-ease) !important; }
+html .LibraryItemBox:hover { filter: none; box-shadow: 0 0 0 1px var(--mg-c70), 0 0 24px -6px var(--mg-c40), 0 24px 40px -16px #000 !important; }
+html .LibraryItemBox::after { background: linear-gradient(180deg, color-mix(in srgb, var(--mg-cyan) 8%, transparent), transparent 40%, color-mix(in srgb, var(--mg-fire) 10%, transparent)) !important; mix-blend-mode: screen !important; opacity: 1 !important; }
+html .LibraryItemActionButton.Play { border-radius: 2px !important; background: rgba(0,0,0,.55) !important; box-shadow: inset 0 0 0 1px var(--mg-cyan), var(--mg-glow-c) !important; }
+html .LibraryItemActionButton.Play svg :is(path, polygon) { fill: var(--mg-cyan) !important; }
+html .EventTimeSpan { background: rgba(0,0,0,.72) !important; color: var(--mg-amber) !important; font-family: var(--mg-data) !important; font-size: 10px !important; letter-spacing: .08em; border-radius: 0 !important; }
+html body .MainPanel .BoxCarousel { background: rgba(0,0,0,.25) !important; background-image: none !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; }
+html .DemoBanner { background: var(--mg-pink) !important; color: #120208 !important; font-family: var(--mg-wide) !important; letter-spacing: .2em; }
+
+/* ---- Game page: the photo-analysis machine ------------------------------ */
+html .AppDetailsMain .TopCapsule { position: relative; }
+html .AppDetailsMain .TopCapsule img.TitleLogo { filter: drop-shadow(0 8px 30px #000) saturate(.85); }
+html.mr-js:not(.mg-esp-off) .AppDetailsMain .TopCapsule::before {
+    content: ""; position: absolute; inset: 12px; z-index: 3; pointer-events: none;
+    background: linear-gradient(var(--mg-cyan),var(--mg-cyan)) 0 0 / 26px 1px no-repeat, linear-gradient(var(--mg-cyan),var(--mg-cyan)) 0 0 / 1px 26px no-repeat, linear-gradient(var(--mg-cyan),var(--mg-cyan)) 100% 0 / 26px 1px no-repeat, linear-gradient(var(--mg-cyan),var(--mg-cyan)) 100% 0 / 1px 26px no-repeat, linear-gradient(var(--mg-cyan),var(--mg-cyan)) 0 100% / 26px 1px no-repeat, linear-gradient(var(--mg-cyan),var(--mg-cyan)) 0 100% / 1px 26px no-repeat, linear-gradient(var(--mg-cyan),var(--mg-cyan)) 100% 100% / 26px 1px no-repeat, linear-gradient(var(--mg-cyan),var(--mg-cyan)) 100% 100% / 1px 26px no-repeat,
+        repeating-linear-gradient(90deg, rgba(63,230,242,.07) 0 1px, transparent 1px 64px),
+        repeating-linear-gradient(0deg, rgba(63,230,242,.07) 0 1px, transparent 1px 64px);
+}
+html.mr-js:not(.mg-esp-off) .AppDetailsMain .TopCapsule.mg-aim::after {
+    content: ""; position: absolute; inset: 0; z-index: 4; pointer-events: none;
+    background: linear-gradient(var(--mg-cyan), var(--mg-cyan)) var(--mg-cx, 50%) 0 / 1px 100% no-repeat,
+                linear-gradient(var(--mg-cyan), var(--mg-cyan)) 0 var(--mg-cy, 50%) / 100% 1px no-repeat;
+    opacity: .55; filter: drop-shadow(0 0 4px var(--mg-cyan));
+}
+html .mg-esp { position: absolute; z-index: 5; left: 30px; top: 22px; pointer-events: none; display: flex; gap: 18px;
+    font: 11px var(--mg-data); letter-spacing: .14em; color: var(--mg-cyan); text-shadow: 0 0 8px var(--mg-c40); }
+html .mg-esp b { font-weight: 400; color: #fff; }
+html .mg-esp .rec { color: var(--mg-pink); text-shadow: var(--mg-glow-p); animation: mg-blink 1.2s steps(1) infinite; }
+html.mg-esp-off .mg-esp { display: none; }
+html .AppDetailsMain .PlayBar > .InnerContainer { border-radius: 2px !important; background: var(--mg-ticks), rgba(var(--mg-smoke), .86) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; }
+/* The play button is a lit neon tube */
+html .PlayButton.ButtonChild {
+    border-radius: 2px !important; background: rgba(0,0,0,.5) !important; animation: mg-buzz 9s linear infinite !important; animation-play-state: var(--mr-ambient) !important;
+    box-shadow: inset 0 0 0 1.5px var(--mg-cyan), inset 0 0 18px -4px var(--mg-cyan), var(--mg-glow-c) !important; transition: background-color .25s, box-shadow .25s !important;
+}
+html .PlayButton.ButtonChild .ButtonText { font-family: var(--mg-wide) !important; font-weight: 400 !important; font-size: 15px !important; letter-spacing: .34em !important; text-transform: uppercase !important; color: var(--mg-cyan) !important; text-shadow: var(--mg-glow-c); }
+html .PlayButton.ButtonChild svg, html .PlayButton.ButtonChild svg path { fill: var(--mg-cyan) !important; filter: drop-shadow(0 0 4px var(--mg-cyan)); }
+html .PlayButton.ButtonChild:hover { background: var(--mg-cyan) !important; animation: none !important; box-shadow: 0 0 0 1px var(--mg-cyan), 0 0 30px var(--mg-c70) !important; transform: none !important; }
+html .PlayButton.ButtonChild:hover .ButtonText { color: #021316 !important; text-shadow: none; }
+html .PlayButton.ButtonChild:hover :is(svg, svg path) { fill: #021316 !important; filter: none; }
+html .PlayButtonContainer:has(.StreamingSelector) .StreamingSelector.ButtonChild { margin-left: 3px !important; border-radius: 2px !important; background: rgba(0,0,0,.5) !important; box-shadow: inset 0 0 0 1.5px var(--mg-c70) !important; }
+html .StreamingSelector.ButtonChild svg :is(path, polygon) { fill: var(--mg-cyan) !important; }
+html .PlayBar .RightControls .MenuButton { border-radius: 2px !important; background: rgba(0,0,0,.35) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; }
+html .PlayBar .RightControls .MenuButton:hover { box-shadow: inset 0 0 0 1px var(--mg-c70), var(--mg-glow-c) !important; transform: none !important; }
+html .LinksSection .LinkInner { border-radius: 2px !important; background: rgba(0,0,0,.3) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; color: var(--t-fg-2) !important;
+    font-family: var(--mg-wide) !important; font-weight: 300 !important; font-size: 11px !important; letter-spacing: .24em !important; text-transform: uppercase !important; }
+html .LinksSection .LinkInner:hover { color: #fff !important; box-shadow: inset 0 0 0 1px var(--mg-c70), var(--mg-glow-c) !important; transform: none !important; }
+html .AppDetailsSection:not(.LinksSection) > .Panel, html .PartnerEvent.Event { border-radius: 2px !important; background: rgba(0,0,0,.28) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; }
+html .PartnerEventFeaturedHeader { background: linear-gradient(90deg, var(--mg-p30), transparent) !important; color: var(--mg-pink) !important; font-family: var(--mg-wide) !important; letter-spacing: .3em; text-transform: uppercase; }
+html .ProgressBar .Unlocked, html .ProgressBar [class*="Unlocked"], html .PlayBar .DetailsProgressBar { border-radius: 0 !important; background: var(--mg-amber) !important; box-shadow: 0 0 8px var(--mg-a30) !important; }
+html .ProgressBar, html .PlayBar .DetailsProgressContainer { border-radius: 0 !important; background: rgba(255,255,255,.08) !important; }
+html .CommunityItem.Blank { background: rgba(255,255,255,.03) !important; }
+html .ReviewMetadata, html .Highlight.ReviewMetadata { background: rgba(0,0,0,.3) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; border-radius: 2px !important; }
+html .ReviewContainer .RatingContainer { border-radius: 2px !important; background: rgba(0,0,0,.3) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; }
+html .ReviewContainer .RatingContainer .Panel { background: transparent !important; }
+html .ReviewContainer :is(.ReviewThumbButton, button) { border-radius: 2px !important; background: rgba(0,0,0,.4) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; color: var(--mg-ink) !important; }
+html .ReviewContainer :is(.ReviewThumbButton, button):hover { box-shadow: inset 0 0 0 1px var(--mg-c70) !important; color: var(--mg-cyan) !important; }
+html .ReviewContainer :is(.ReviewThumbButton, button) svg :is(path, polygon) { fill: currentColor !important; }
+html .ScrollToTopButton > div { background: rgba(0,0,0,.7) !important; border-radius: 2px !important; box-shadow: inset 0 0 0 1px var(--mg-c40) !important; color: var(--mg-cyan) !important; }
+html .URLBar { border-radius: 2px !important; background: rgba(var(--mg-smoke), .85) !important; box-shadow: inset 0 0 0 1px var(--t-line) !important; border: none !important; margin-bottom: 8px !important; }
+html .URLBar .URLBarText { font-family: var(--mg-data) !important; font-size: 11px !important; color: var(--mg-amber) !important; }
+html .DownloadsPage .Section { border-radius: 2px !important; }
+
+/* ---- Startup: an eye under examination --------------------------------- */
+html .od-boot.mg-eye { position: fixed; inset: 0; z-index: 10000; pointer-events: none; background: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px;
+    animation: mg-boot-out 900ms ease 3300ms forwards; }
+html .od-boot.mg-eye .eye { position: relative; width: 420px; height: 210px; border-radius: 50%; overflow: hidden; animation: mg-eye-in 1400ms cubic-bezier(.2,.8,.2,1) backwards;
+    background: radial-gradient(60% 90% at 50% 50%, #2a2420, #0b0908 70%); box-shadow: 0 0 0 1px rgba(255,180,84,.15), 0 0 80px rgba(255,116,36,.12); }
+html .od-boot.mg-eye .iris { position: absolute; left: 50%; top: 50%; width: 190px; height: 190px; margin: -95px 0 0 -95px; border-radius: 50%;
+    background: radial-gradient(circle, transparent 0 24%, rgba(0,0,0,.6) 60%, #000 72%),
+                repeating-conic-gradient(from 0deg, #4C8E93 0 1.6deg, #1E4146 1.6deg 3.4deg, #A6773C 3.4deg 4.4deg, #2D5A5F 4.4deg 6deg),
+                radial-gradient(circle, #C98A3E 0 30%, #2E6266 60%); }
+html .od-boot.mg-eye .pupil { position: absolute; left: 50%; top: 50%; width: 50px; height: 50px; margin: -25px 0 0 -25px; border-radius: 50%; background: #000;
+    box-shadow: 0 0 10px 4px rgba(0,0,0,.8); animation: mg-iris 2600ms cubic-bezier(.3,1.4,.5,1) 300ms both; }
+html .od-boot.mg-eye .glint { position: absolute; left: 54%; top: 34%; width: 22px; height: 12px; border-radius: 50%; background: rgba(255,255,255,.85); filter: blur(1px); }
+html .od-boot.mg-eye .flare { position: absolute; left: 40%; top: 56%; width: 30px; height: 8px; border-radius: 50%; background: var(--mg-fire); filter: blur(3px); opacity: .7; animation: mg-buzz 1.3s linear infinite; }
+html .od-boot.mg-eye .lid { position: absolute; inset: 0; border-radius: 50%; box-shadow: inset 0 26px 40px #000, inset 0 -18px 30px #000; }
+html .od-boot.mg-eye .t { font: 300 34px var(--mg-wide); letter-spacing: .9em; margin-right: -.9em; color: var(--mg-ink); text-shadow: 0 0 18px rgba(255,255,255,.3); animation: mg-tube-on 1.2s linear 1500ms backwards; }
+html .od-boot.mg-eye .r { font: 11px var(--mg-data); letter-spacing: .24em; color: var(--mg-amber); opacity: .8; animation: mr-fade-up 600ms ease 2100ms backwards; }
