@@ -1,6 +1,6 @@
 # Megacity
 
-**Future noir.** A rain-soaked megacity at night, seen from an analyst's desk. A [Millennium](https://steambrew.app) theme for the Steam client.
+**Future noir.** A rain-soaked megacity at night, seen from an analyst's desk. A Steam client theme for [Beyond Steam](https://github.com/OriginalSwayze/Beyond-Steam) and [Millennium](https://steambrew.app).
 
 ![Megacity: library](media/library.gif)
 
@@ -16,13 +16,14 @@
 
 ## Install
 
-1. Install [Millennium](https://steambrew.app).
-2. Find **Megacity** in the Millennium theme browser, or download this repository into `Steam/millennium/themes/Megacity`.
-3. Open **Steam → Millennium → Themes** and pick **Megacity**.
+- **With [Beyond Steam](https://github.com/OriginalSwayze/Beyond-Steam) (easiest):** in Steam press **Ctrl+Shift+B**, open
+  **Get more** and install **Megacity**.
+- **By hand:** download **Megacity.zip** from the [latest release](https://github.com/OriginalSwayze/Megacity/releases/latest) and unzip
+  it into `%APPDATA%\Beyond Steam\themes\Megacity` (Beyond Steam) or `Steam\millennium\themes\Megacity` (Millennium).
 
 ## Options
 
-Open **Millennium → Themes → Megacity** to change:
+In Beyond Steam's **Theme options** tab (or **Millennium → Themes → Megacity**) you can change:
 
 Mood (Night, Dust, Ice) · Weather (Rain, Downpour, Snow, Dry) · City (Live, Still, Off) · Light through blinds · Analysis overlay · Covers · Film grain · Panel transparency · Density · What's New · Readout · Startup screen · Motion · Cursor light · Privacy · Contrast · Focus rings · Text size
 
